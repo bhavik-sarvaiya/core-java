@@ -4,11 +4,13 @@ class Example6{
 		int b=5;  
 		int c=20;  
 		
-		System.out.println(a<c&&a<b);//false && true = false  
+		System.out.println("a>c = "+ (a>c));
+		System.out.println("b<a = "+ (a<b));
+		System.out.println("a>c|b<a = "+ (a>c||a<b));//false && true = false
 		System.out.println(a<c&b<c); //false & true = false
 		
 		System.out.println(a<c||a<b);//false && true = true  
-		System.out.println(a<c|a<b);//false && true = true
+		System.out.println(a<c|a<b); //false && true = true
 		
 		System.out.println("================ Ternary Operator ============");
 		/*
