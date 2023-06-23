@@ -1,3 +1,4 @@
+package com.example;
 class Example8{
 	public static void main(String args[]){
 

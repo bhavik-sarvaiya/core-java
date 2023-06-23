@@ -1,3 +1,4 @@
+package com.example;
 /*
 class <class name> { }
 */

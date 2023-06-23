@@ -1,3 +1,4 @@
+package com.example;
 class Example1{
 	public static void main(String []dhree){
 		int a = 10;  

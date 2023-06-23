@@ -4,11 +4,14 @@ public class Book implements Comparable<Book>{
     public int id;
     public String name;
     public String author;
+    public Double price;
 
-    public Book(int id, String name, String author) {
+    public Book(int id, String name, String author, Double price) {
         this.id = id;
         this.name = name;
         this.author = author;
+        this.price = price;
+        
     }
 
     @Override
@@ -21,4 +24,10 @@ public class Book implements Comparable<Book>{
             return -1;
         }
     }
+
+	@Override
+	public String toString() {
+		return "Book [id=" + id + ", name=" + name + ", author=" + author + ", price=" + price + "]";
+	}    
+   
 }

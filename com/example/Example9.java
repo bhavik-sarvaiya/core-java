@@ -1,3 +1,4 @@
+package com.example;
 class Example9{
 	public static void main(String args[]){
 		/* -- Nested if else ---
