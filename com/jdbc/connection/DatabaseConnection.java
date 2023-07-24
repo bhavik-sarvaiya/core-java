@@ -10,6 +10,14 @@ public class DatabaseConnection {
 	public static void main(String args[]) {
 
 		try {
+
+			String emaiId = "test15@bb.com";
+			String name = "test15";
+			String password = "123456";
+
+			int updateUserId = 14;
+			int deleteUserId = 11;
+
 			// Register the Driver class
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -17,6 +25,27 @@ public class DatabaseConnection {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/user_info", "root", "admin@123");
 			System.out.println("create a connection.");
 
+			Statement statement1 = con.createStatement();
+			int insertRecord = statement1
+					.executeUpdate("INSERT INTO `user_info`" + ".`user` (`email_id`, `name`, `password`) " + "VALUES ('"
+							+ emaiId + "', '" + name + "', '" + password + "')");
+
+			System.out.println("===================insert record======================");
+			System.out.println(insertRecord + " record inserted.");
+
+			System.out.println("====================update record=====================");
+			Statement statement2 = con.createStatement();
+			int updateRecord = statement2.executeUpdate(
+					"UPDATE `user_info`" + ".`user` SET `name` = 'Hiten' WHERE (`id` = '" + updateUserId + "')");
+			System.out.println(updateRecord + " record updated. and user id = " + updateUserId);
+
+			System.out.println("====================update record=====================");
+			Statement statement3 = con.createStatement();
+			int deletedRecord = statement3
+					.executeUpdate("Delete from `user_info`" + ".`user` WHERE (`id` = '" + deleteUserId + "')");
+			System.out.println(deletedRecord + " record deleted. and user id = " + deleteUserId);
+
+			System.out.println("====================user list=====================");
 			Statement statement = con.createStatement();
 			ResultSet rs = statement.executeQuery("select * from user");
 
