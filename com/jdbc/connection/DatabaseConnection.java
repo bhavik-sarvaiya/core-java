@@ -11,12 +11,12 @@ public class DatabaseConnection {
 
 		try {
 
-			String emaiId = "test15@bb.com";
-			String name = "test15";
+			String emaiId = "test16@bb.com";
+			String name = "test16";
 			String password = "123456";
 
-			int updateUserId = 14;
-			int deleteUserId = 11;
+			int updateUserId = 15;
+			int deleteUserId = 12;
 
 			// Register the Driver class
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -36,7 +36,7 @@ public class DatabaseConnection {
 			System.out.println("====================update record=====================");
 			Statement statement2 = con.createStatement();
 			int updateRecord = statement2.executeUpdate(
-					"UPDATE `user_info`" + ".`user` SET `name` = 'Hiten' WHERE (`id` = '" + updateUserId + "')");
+					"UPDATE `user_info`" + ".`user` SET `name` = 'Bhumika' WHERE (`id` = '" + updateUserId + "')");
 			System.out.println(updateRecord + " record updated. and user id = " + updateUserId);
 
 			System.out.println("====================update record=====================");
