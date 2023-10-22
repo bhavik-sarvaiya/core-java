@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Scanner;
 
+import com.mysql.cj.jdbc.DatabaseMetaData;
 import com.mysql.cj.jdbc.result.ResultSetMetaData;
 
 public class ExampleOfSwitchCase {
@@ -84,6 +85,15 @@ public class ExampleOfSwitchCase {
 					System.out.println("exit");
 					break;
 				}
+				
+				DatabaseMetaData dbms = (DatabaseMetaData) con.getMetaData();
+				System.out.println(dbms.getDatabaseProductName());
+				System.out.println(dbms.getDatabaseProductVersion());
+				System.out.println(dbms.getMaxColumnsInTable());
+				System.out.println(dbms.getMaxTablesInSelect());
+				System.out.println(dbms.getDriverName());
+				System.out.println(dbms.getDriverVersion());
+				
 				System.out.println("If you want to countinue y/n ?");
 				String s = scanner.next();
 				if (s.startsWith("n")) {
