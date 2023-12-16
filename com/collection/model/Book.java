@@ -6,19 +6,18 @@ public class Book implements Comparable<Book> {
 	public String author;
 	public Double price;
 
-	public Book(int id, String name, String author, Double price) {
-		this.id = id;
-		this.name = name;
-		this.author = author;
-		this.price = price;
-
-	}
-
 	public Book(int id, String name, String author) {
 		this.id = id;
 		this.name = name;
 		this.author = author;
 
+	}
+
+	public Book(int i, String string, String string2, double d) {
+		this.id = id;
+		this.name = name;
+		this.author = author;
+		this.price = d;
 	}
 
 	@Override

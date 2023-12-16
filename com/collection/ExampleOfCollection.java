@@ -2,19 +2,35 @@ package com.collection;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
+
+import com.collection.model.Student;
 
 public class ExampleOfCollection {
 
 	public static void main(String[] x) {
-		List<String> list = new ArrayList();
+		// List<String> list = new ArrayList();
+		ArrayList<String> list = new ArrayList<String>();
 		list.add("Aman");
 		list.add("chirag");
 		list.add("kinjal");
 		list.add("krunal");
 		list.add("Harsh");
 		list.add("JJ");
+		System.out.println(list.get(2));
 
+		ArrayList<Student> studentList = new ArrayList<Student>();
+		studentList.add(new Student(1, "Yash", 5));
+		studentList.add(new Student(2, "Yashraj", 6));
+		studentList.add(new Student(3, "krunal", 7));
+		studentList.add(new Student(4, "pratik", 8));
+
+		System.out.println("-----------------------------------\n" + studentList);
+
+		studentList.forEach(val -> {
+			System.out.println(val.getRollno() + " , " + val.getName() + " , " + val.getAge());
+		});
+
+		System.out.println("-----------------------------------");
 		/*
 		 * (expression) -> { body };
 		 *
