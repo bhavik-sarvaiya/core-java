@@ -17,9 +17,9 @@ public class StudentComparable implements Comparable<StudentComparable> {
 		if (age == st.age)
 			return 0;
 		else if (age > st.age)
-			return 1;
-		else
 			return -1;
+		else
+			return 1;
 	}
 
 	public String getName() {
