@@ -41,48 +41,47 @@ public class ExampleOfDbConnection {
 					.executeUpdate("UPDATE `demo`.`student` SET `department_id` = '2' WHERE (`id` = '1')");
 			System.out.println("===================update record======================");
 			System.out.println(updateRecord + " record updated.");
-			
+
 			Statement statement3 = con.createStatement();
-			
-			//delete query
-			int deleteRecord = statement3
-					.executeUpdate("DELETE FROM `demo`.`student` WHERE (`id` = '8')");
+
+			// delete query
+			int deleteRecord = statement3.executeUpdate("DELETE FROM `demo`.`student` WHERE (`id` = '8')");
 			System.out.println("===================delete record======================");
 			System.out.println(deleteRecord + " record deleted.");
-			
 
 			System.out.println("====================user list=====================");
 
 			// view list of recored
 			Statement statement = con.createStatement();
 			ResultSet rs = statement.executeQuery("select * from student");
-					
+
 			while (rs.next()) {
 				System.out.println(
 						rs.getInt(1) + " - " + rs.getString(2) + " - " + rs.getString(3) + " - " + rs.getInt(4));
 			}
-			
+
 			System.out.println("====================result set metadata=====================");
 			ResultSetMetaData rsmd = rs.getMetaData();
-			
+
 			System.out.println("column count => " + rsmd.getColumnCount());
 			System.out.println("table name => " + rsmd.getTableName(1));
 			System.out.println("column name => " + rsmd.getColumnName(3));
-			
+
 			System.out.println("====================Database metadata=====================");
 			DatabaseMetaData dbmd = con.getMetaData();
 			System.out.println("Driver name => " + dbmd.getDriverName());
 			System.out.println("User name => " + dbmd.getUserName());
 			System.out.println("Database product name => " + dbmd.getDatabaseProductName());
 			System.out.println("Database product version => " + dbmd.getDatabaseProductVersion());
-			//System.out.println("Database product version => " + dbmd.getTables(roll_no, roll_no, name, args));
-			
-			String table[]={"TABLE"};  
-			ResultSet rs2=dbmd.getTables(null,null,null,table);  
-			  
-			while(rs2.next()){  
-			System.out.println(rs2.getString(3));  
-			} 
+			// System.out.println("Database product version => " + dbmd.getTables(roll_no,
+			// roll_no, name, args));
+
+			String table[] = { "TABLE" };
+			ResultSet rs2 = dbmd.getTables(null, null, null, table);
+
+			while (rs2.next()) {
+				System.out.println(rs2.getString(3));
+			}
 			// close connection
 			con.close();
 		} catch (SQLException e) {

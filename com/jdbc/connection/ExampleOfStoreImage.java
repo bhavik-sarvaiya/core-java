@@ -16,8 +16,8 @@ public class ExampleOfStoreImage {
 
 			PreparedStatement preparedStatement = con.prepareStatement(
 					"INSERT INTO `user_info`" + ".`user_image` (`name`, `image`) " + "VALUES (?,?)");
-			preparedStatement.setString(1, "dhruv");
-			FileInputStream fileInputStream = new FileInputStream("C:\\Users\\BHAVIK\\Downloads\\image.jpg");
+			preparedStatement.setString(1, "Motu-patlu");
+			FileInputStream fileInputStream = new FileInputStream("D:\\motu.jpg");
 			preparedStatement.setBinaryStream(2,fileInputStream,fileInputStream.available());
 
 			int insertRecord = preparedStatement.executeUpdate();
