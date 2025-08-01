@@ -14,7 +14,8 @@ public class ExampleOfEnumSet {
 		Iterator<Days> it = set.iterator();
 
 		while (it.hasNext()) {
-			System.out.println(it.next());
+			Days day = it.next();
+			System.out.println(day+" , "+Days.values());
 		}
 
 	}
