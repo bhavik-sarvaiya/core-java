@@ -19,6 +19,27 @@ public class ExampleOfDatabaseConnnection {
 					"admin@123");
 			System.out.println("create a connection.");
 
+			System.out.println("====================insert employee data =====================");
+			Statement statement1 = con.createStatement();
+			String name = "suni";
+			String city = "surat";
+			String address = "xyxvz";
+			String designation = "accountant";
+
+			int insertRecord = statement1.executeUpdate(
+					"INSERT INTO `employee_db`" + ".`employeee` (`name`, `city`, `address`, `designation`) "
+							+ "VALUES ('" + name + "', '" + city + "', '" + address + "','" + designation + "')");
+
+			System.out.println(insertRecord + " record inserted");
+
+			System.out.println("====================update employee data =====================");
+
+			Statement statement2 = con.createStatement();
+
+			int updatedRecord = statement2.executeUpdate("UPDATE `employee_db`.`employeee` SET `name` = 'sunay', "
+					+ "`city` = 'vadodara', `address` = 'alkapuri' " + "WHERE (`id` = '6')");
+			System.out.println(updatedRecord + " record updated");
+
 			System.out.println("====================employee list=====================");
 			// create statement
 			Statement statement = con.createStatement();
