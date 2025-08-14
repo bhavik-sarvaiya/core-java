@@ -44,7 +44,7 @@ public class ExampleOfDatabaseConnnection {
 			// create statement
 			Statement statement = con.createStatement();
 			// execute query
-			ResultSet rs = statement.executeQuery("select * from employeee");
+			ResultSet rs = statement.executeQuery("select * from employeee where id = 1");
 
 			// read list
 			while (rs.next()) {
