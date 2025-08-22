@@ -28,7 +28,7 @@ public class ExampleOfDatabaseConnnection {
 
 			int insertRecord = statement1.executeUpdate(
 					"INSERT INTO `employee_db`" + ".`employeee` (`name`, `city`, `address`, `designation`) "
-							+ "VALUES ('" + name + "', '" + city + "', '" + address + "','" + designation + "')");
+							+ "VALUES ('" + name +"','"+ city + "', '" + address + "','" + designation + "')");
 
 			System.out.println(insertRecord + " record inserted");
 
